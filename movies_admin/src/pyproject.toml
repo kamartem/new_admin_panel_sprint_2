@@ -1,0 +1,55 @@
+[flake8]
+max-line-length = 120
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+
+[tool.ruff.isort]
+known-first-party = ["movies"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+select = ["ALL"]
+# https://beta.ruff.rs/docs/rules/
+ignore = [
+    "TRY003", # Avoid specifying long messages outside the exception class
+    "EM101", # Exception must not use a string literal, assign to variable first
+    "EM102", # Exception must not use an f-string literal, assign to variable first
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    "D106", # Missing docstring in public nested class
+    "D107", # Missing docstring in __init__
+    "D202", # No blank lines allowed after function docstring
+    "D203", # 1 blank line required before class docstring
+    "D204", # 1 blank line required after class docstring
+    "D213", # Multi-line docstring summary should start at the second line
+    "D215", # Section underline is over-indented ("{name}")
+    "D407", # Missing dashed underline after section ("{name}")
+    "D408", # Section underline should be in the line following the section's name ("{name}")
+    "D409", # Section underline should match the length of its name ("{name}")
+    "D413", # Missing blank line after last section ("{name}")
+    "ANN002", #  Missing type annotation for *args
+    "ANN003", # Missing type annotation for **kwargs
+    "ANN101", # Missing type annotation for {name} in method
+    "ANN102", # Missing type annotation for {name} in classmethod
+    "G004", # Logging statement uses f-string
+    "PIE790", # Unnecessary pass statement
+    "ARG001", #  Unused function argument: {name}
+    "ARG002", #  Unused method argument: {name}
+    "ARG003", #  Unused class method argument: {name}
+    "ARG004", #  Unused static method argument: {name}
+    "ARG005", #  Unused lambda argument: {name}
+    "DJ001", # Avoid using `null=True` on string-based fields such as
+]
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "single"
+multiline-quotes = "double"

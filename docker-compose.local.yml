@@ -1,0 +1,10 @@
+version: '3.9'
+
+x-backend-volumes: &backend-volumes
+  volumes:
+    - "./movies_admin/src:${APP_DIR}"
+
+services:
+
+  backend:
+    <<: *backend-volumes

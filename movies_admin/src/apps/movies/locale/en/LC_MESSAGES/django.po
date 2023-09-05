@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-23 14:30+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: movies/models.py:24
+msgid "name"
+msgstr "Name"
+
+#: movies/models.py:25 movies/models.py:42
+msgid "description"
+msgstr "Description"
+
+#: movies/models.py:29
+msgid "genre"
+msgstr "Genre"
+
+#: movies/models.py:30
+msgid "genres"
+msgstr "Genres"
+
+#: movies/models.py:41
+msgid "title"
+msgstr "Title"
+
+#: movies/models.py:43
+msgid "premiere_date"
+msgstr "Date of premiere"
+
+#: movies/models.py:45
+msgid "type"
+msgstr "Type"
+
+#: movies/models.py:47
+msgid "certificate"
+msgstr "Certificate"
+
+#: movies/models.py:48
+msgid "file"
+msgstr "File"
+
+#: movies/models.py:52
+msgid "movie"
+msgstr "Movie"
+
+#: movies/models.py:53
+msgid "movies"
+msgstr "Movies"
+
+#: movies/models.py:66
+#, fuzzy
+#| msgid "peson_film_work"
+msgid "genre_film_work"
+msgstr "Person's film work"
+
+#: movies/models.py:67
+#, fuzzy
+#| msgid "peson_film_work"
+msgid "genre_film_works"
+msgstr "Person's film work"
+
+#: movies/models.py:72
+msgid "male"
+msgstr "Male"
+
+#: movies/models.py:73
+msgid "female"
+msgstr "Female"
+
+#: movies/models.py:77
+msgid "fio"
+msgstr "Full name"
+
+#: movies/models.py:78
+msgid "gender"
+msgstr "Gender"
+
+#: movies/models.py:82
+msgid "person"
+msgstr "Person"
+
+#: movies/models.py:83
+msgid "persons"
+msgstr "Persons"
+
+#: movies/models.py:90
+msgid "actor"
+msgstr "Actor"
+
+#: movies/models.py:91
+msgid "director"
+msgstr "Director"
+
+#: movies/models.py:92
+msgid "writer"
+msgstr "Writer"
+
+#: movies/models.py:98
+msgid "role"
+msgstr "Role"
+
+#: movies/models.py:103
+#, fuzzy
+#| msgid "peson_film_work"
+msgid "person_film_work"
+msgstr "Person's film work"
+
+#: movies/models.py:104
+#, fuzzy
+#| msgid "peson_film_work"
+msgid "person_film_works"
+msgstr "Person's film work"
