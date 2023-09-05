@@ -16,95 +16,97 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 #: apps/movies/enums.py:6
 msgid "male"
-msgstr "male"
+msgstr "Мужчина"
 
 #: apps/movies/enums.py:7
 msgid "female"
-msgstr "female"
+msgstr "Женщина"
 
 #: apps/movies/enums.py:11
 msgid "actor"
-msgstr "actor"
+msgstr "Актер"
 
 #: apps/movies/enums.py:12
 msgid "director"
-msgstr "director"
+msgstr "Режиссер"
 
 #: apps/movies/enums.py:13
 msgid "writer"
-msgstr "writer"
+msgstr "Сценарист"
 
 #: apps/movies/models.py:26
 msgid "name"
-msgstr "name"
+msgstr "Название"
 
 #: apps/movies/models.py:27 apps/movies/models.py:40
 msgid "description"
-msgstr "description"
+msgstr "Описание"
 
 #: apps/movies/models.py:31
 msgid "genre"
-msgstr "genre"
+msgstr "Жанр"
 
 #: apps/movies/models.py:32
 msgid "genres"
-msgstr "genres"
+msgstr "Жанры"
 
 #: apps/movies/models.py:39
 msgid "title"
-msgstr "title"
+msgstr "Назване"
 
 #: apps/movies/models.py:41
 msgid "premiere_date"
-msgstr "premiere date"
+msgstr "Дата премьеры"
 
 #: apps/movies/models.py:42
 msgid "file"
-msgstr "file"
+msgstr "Файл"
 
 #: apps/movies/models.py:44
 msgid "type"
-msgstr "type"
+msgstr "Тип"
 
 #: apps/movies/models.py:49
 msgid "movie"
-msgstr "movie"
+msgstr "Кино"
 
 #: apps/movies/models.py:50
 msgid "movies"
-msgstr "movies"
+msgstr ""
 
 #: apps/movies/models.py:63
 msgid "genre_film_work"
-msgstr "genre film work"
+msgstr "Участие в фильме"
 
 #: apps/movies/models.py:64
 msgid "genre_film_works"
-msgstr "genre film works"
+msgstr "Участие в фильмах"
 
 #: apps/movies/models.py:69
 msgid "fio"
-msgstr "fio"
+msgstr "Полное имя"
 
 #: apps/movies/models.py:73
 msgid "person"
-msgstr "person"
+msgstr "Персона"
 
 #: apps/movies/models.py:74
 msgid "persons"
-msgstr "persons"
+msgstr "Персоны"
 
 #: apps/movies/models.py:83
 msgid "role"
-msgstr "role"
+msgstr "Роль"
 
 #: apps/movies/models.py:88
 msgid "person_film_work"
-msgstr "person film work"
+msgstr "Участие в фильме"
 
 #: apps/movies/models.py:89
 msgid "person_film_works"
-msgstr "person film works"
+msgstr "Участие в фильмах"
