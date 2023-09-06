@@ -14,6 +14,7 @@ include(
     "config/security.py",
     "config/templates.py",
     "config/internationalization.py",
+    "config/drf.py",
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent

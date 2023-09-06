@@ -1,61 +1,45 @@
 from django.contrib.postgres.aggregates import ArrayAgg
 from django.db.models import Q
-from django.http import JsonResponse
-from django.views.generic.detail import BaseDetailView
-from django.views.generic.list import BaseListView
+from rest_framework import generics
 
-from config.components.common import PAGE_COUNT
-from movies.models import Filmwork, Role
+from apps.movies.api.v1.serializers import FilmworkSerializer
+from apps.movies.enums import RoleType
+from apps.movies.models import Filmwork
 
 
-class MoviesApiMixin:
-    model = Filmwork
-    http_method_names = ['get']
-
-    @staticmethod
-    def get_person_aggregation(role: Role) -> ArrayAgg:
-        return ArrayAgg(
-            'persons__full_name',
-            distinct=True,
-            filter=Q(personfilmwork__role=role)
+class MoviesListApiViewMixin:
+    queryset = (
+        Filmwork.objects.prefetch_related(
+            'genres',
+            'persons',
         )
-
-    def get_queryset(self):
-        queryset = MoviesApiMixin.model.objects \
-            .values().annotate(
-                genres=ArrayAgg('genres__name', distinct=True),
-                actors=self.get_person_aggregation(Role.ACTOR),
-                directors=self.get_person_aggregation(Role.DIRECTOR),
-                writers=self.get_person_aggregation(Role.WRITER)
-            )
-        return queryset
-
-    def render_to_response(self, context, **response_kwargs):
-        return JsonResponse(context)
-
-
-class MoviesListApi(MoviesApiMixin, BaseListView):
-    paginate_by = PAGE_COUNT
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        queryset = self.get_queryset()
-        paginator, page, queryset, is_paginated = self.paginate_queryset(
-            queryset,
-            self.paginate_by
+        .values()
+        .all()
+        .annotate(
+            genres=ArrayAgg('genres__name', distinct=True),
+            actors=ArrayAgg(
+                'persons__full_name',
+                filter=Q(personfilmwork__role__icontains=RoleType.ACTOR),
+                distinct=True,
+            ),
+            directors=ArrayAgg(
+                'persons__full_name',
+                filter=Q(personfilmwork__role__icontains=RoleType.DIRECTOR),
+                distinct=True,
+            ),
+            writers=ArrayAgg(
+                'persons__full_name',
+                filter=Q(personfilmwork__role__icontains=RoleType.WRITER),
+                distinct=True,
+            ),
         )
-        _next = page.next_page_number() if page.has_next() else None
-        _prev = page.previous_page_number() if page.has_previous() else None
-        context = {
-            'count': paginator.count,
-            'total_pages': paginator.num_pages,
-            'prev': _prev,
-            'next': _next,
-            'results': list(queryset.values()),
-        }
-        return context
+    )
+    serializer_class = FilmworkSerializer
 
 
-class MoviesDetailApi(MoviesApiMixin, BaseDetailView):
+class MoviesListApi(MoviesListApiViewMixin, generics.ListAPIView):
+    pass
 
-    def get_context_data(self, **kwargs):
-        return kwargs['object']
+
+class MoviesDetailApi(MoviesListApiViewMixin, generics.RetrieveAPIView):
+    pass

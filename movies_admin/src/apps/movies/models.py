@@ -42,7 +42,8 @@ class Filmwork(TimeStampedMixin):
     file_path = models.FileField(_("file"), blank=True, null=True, upload_to="movies/")
     rating = models.FloatField("rating", blank=True, validators=[MinValueValidator(0), MaxValueValidator(100)])
     type = models.CharField(_("type"), choices=FilmworkType.choices, default=FilmworkType.MOVIE)
-    genres = models.ManyToManyField(Genre, through="GenreFilmwork")
+    genres = models.ManyToManyField("Genre", through="GenreFilmwork")
+    persons = models.ManyToManyField("Person", through="PersonFilmwork")
 
     class Meta:
         db_table = 'content"."film_work'
