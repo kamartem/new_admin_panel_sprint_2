@@ -1,4 +1,4 @@
-bind = "0.0.0.0:8080"
+bind = "0.0.0.0:8000"
 workers = 2
 wsgi_app = "project.wsgi:application"
 worker_class = "gthread"

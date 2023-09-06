@@ -8,3 +8,5 @@ services:
 
   backend:
     <<: *backend-volumes
+    ports:
+      - "8000:8000"

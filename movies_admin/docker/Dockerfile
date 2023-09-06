@@ -41,7 +41,7 @@ RUN chmod +x '/entrypoint.sh' \
 # Running as non-root user:
 USER web
 
-EXPOSE 8080
+EXPOSE 8000
 ENTRYPOINT ["/entrypoint.sh"]
 
 ### prod build

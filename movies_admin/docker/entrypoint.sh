@@ -29,7 +29,7 @@ if [ "$START_MODE" == "BACKEND" ]; then
   python $APP_DIR/manage.py collectstatic -v 0 --no-input --clear
   # Run service
   if [ "$PROJECT_STAGE" == "local" ]; then
-    python $APP_DIR/manage.py runserver 0.0.0.0:8080
+    python $APP_DIR/manage.py runserver 0.0.0.0:8000
   else
     gunicorn -c $APP_DIR/conf/gunicorn-wsgi.conf.py
   fi
