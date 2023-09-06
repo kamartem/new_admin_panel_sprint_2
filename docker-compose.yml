@@ -38,6 +38,8 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/vhosts:/etc/nginx/conf.d:ro
+      - ./nginx/pages/404.htmlsts:/etc/nginx/conf.d:ro
+      - ./nginx/pages/50x.html:/etc/nginx/conf.d:ro
       - ./media:/var/html/media/
       - backend_static:/var/html/static/
     ports:
