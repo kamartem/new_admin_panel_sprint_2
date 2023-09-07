@@ -27,6 +27,7 @@ if [ "$START_MODE" == "BACKEND" ]; then
   # Database migrations
   python $APP_DIR/manage.py migrate
   python $APP_DIR/manage.py collectstatic -v 0 --no-input --clear
+  python $APP_DIR/manage.py compilemessages -l ru -l en -v 0
   # Run service
   if [ "$PROJECT_STAGE" == "local" ]; then
     python $APP_DIR/manage.py runserver 0.0.0.0:8000
