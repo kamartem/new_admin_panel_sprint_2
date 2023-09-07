@@ -10,3 +10,9 @@ services:
     <<: *backend-volumes
     ports:
       - "8000:8000"
+
+  backend_db:
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/full_db.sql:/docker-entrypoint-initdb.d/init_db.sql
